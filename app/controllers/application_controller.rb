@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  
+  include JSONRequestsForgeryBypass
 
   # exception notifier:
   unless Rails.application.config.consider_all_requests_local
