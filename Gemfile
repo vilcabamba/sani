@@ -73,3 +73,8 @@ gem "sorcery"
 
 # pusher
 gem "pusher"
+
+# backgrounding:
+gem "sidekiq"
+gem "sinatra", require: false
+gem "slim"
