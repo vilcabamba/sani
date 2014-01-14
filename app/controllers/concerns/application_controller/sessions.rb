@@ -7,7 +7,7 @@ class ApplicationController
     end
 
     def current_bandango
-      @current_bandango ||= Bandango.find(session[:bandango_id]) if session[:bandango_id]
+      @current_bandango ||= Bandango.cached_find(session[:bandango_id]) if session[:bandango_id]
     end
   end
 end
