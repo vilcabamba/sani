@@ -10,4 +10,7 @@
 #
 
 class Model < ActiveRecord::Base
+  include Validations
+  include Information
+
 end
