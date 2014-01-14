@@ -9,6 +9,7 @@
 #  attrs       :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  time        :datetime
 #
 
 class Transaccion < ActiveRecord::Base

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113191854) do
+ActiveRecord::Schema.define(version: 20140114032100) do
 
   create_table "bandangos", force: true do |t|
     t.integer  "business_id", null: false
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 20140113191854) do
     t.text     "attrs"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "time",        null: false
   end
 
   add_index "transacciones", ["bandango_id"], name: "index_transacciones_on_bandango_id", using: :btree
+  add_index "transacciones", ["time"], name: "index_transacciones_on_time", using: :btree
 
 end
