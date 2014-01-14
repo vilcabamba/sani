@@ -4,8 +4,9 @@ class Transaccion < ActiveRecord::Base
 
     included do
       validates :bandango_id, presence: true
-      validates :model,       presence: true
       validates :action,      presence: true
+      validates :model,       presence: true,
+                              inclusion: { in: Model.cached_names }
     end
   end
 end
