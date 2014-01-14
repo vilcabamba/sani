@@ -3,7 +3,6 @@ module Api
     before_action :restrict_api_access
 
     def index
-      current_bandango = Bandango.find(2)
       since = params[:since] || 0
       respond_with current_bandango.transacciones_since(since)
     end
