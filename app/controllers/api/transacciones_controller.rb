@@ -7,13 +7,14 @@ module Api
         bandango_id: session[:bandango_id],
               model: transaccion_params[:class_name],
              action: transaccion_params[:action],
-              attrs: transaccion_params[:object])
+              attrs: transaccion_params[:object],
+               time: transaccion_params[:time])
     end
 
     private
 
     def transaccion_params
-      @transaccion_params ||= params.require(:transaccion).permit(:action, :class_name, :object)
+      @transaccion_params ||= params.require(:transaccion).permit(:action, :class_name, :object, :time)
     end
   end
 end
