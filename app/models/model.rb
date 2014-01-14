@@ -13,5 +13,6 @@ class Model < ActiveRecord::Base
   include Caching
   include Validations
   include Information
+  include Identificable
 
 end
