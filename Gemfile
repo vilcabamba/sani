@@ -70,3 +70,6 @@ gem "active_model_serializers"
 
 # sorcery
 gem "sorcery"
+
+# pusher
+gem "pusher"
