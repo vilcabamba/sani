@@ -1,0 +1,14 @@
+<%= div_for user, :class => "row" do %>
+  <div class="col-xs-1">
+    <%= image_tag user.imagen_url, :class => "profile_image mini" %>
+  </div>
+  <div class="col-xs-10">
+    <div class="username"><%= user.username %></div>
+    <div class="email"><%= user.email %></div>
+  </div>
+  <div class="col-xs-1">
+    <%= link_to edit_user_path(user), :class => "btn btn-xs btn-default" do %>
+      <span class="glyphicon glyphicon-edit"></span>
+    <% end %>
+  </div>
+<% end %>
