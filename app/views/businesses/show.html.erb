@@ -1,0 +1,12 @@
+<h3><%= @business.nombre %></h3>
+<div>
+  token:
+  <code><%= @business.token %></code>
+</div>
+
+<h4>Bandangos</h4>
+<div class="bandangos">
+  <% @business.bandangos.each do |bandango| %>
+    <%= render bandango %>
+  <% end %>
+</div>
