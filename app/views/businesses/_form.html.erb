@@ -3,9 +3,12 @@
 </h3>
 
 <%= form_for @business do |f| %>
+
+  <%= form_errors_for @business %>
+
   <div class="form-group">
     <%= f.label :nombre, "Nombre" %>
-    <%= f.text_field :nombre, :class => "form-control" %>
+    <%= f.text_field :nombre, :class => "form-control", required: true %>
   </div>
   <div class="actions">
     <% if @business.new_record? %>

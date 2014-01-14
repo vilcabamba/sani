@@ -13,6 +13,7 @@
 class Bandango < ActiveRecord::Base
   include Info
   include Caching
+  include Validations
   include Tokenizable
   include BandangoTransacciones
 

@@ -11,6 +11,7 @@
 
 class Business < ActiveRecord::Base
   include Tokenizable
+  include Validations
 
 # relationships
   has_many :bandangos
