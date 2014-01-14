@@ -4,7 +4,7 @@ class Model < ActiveRecord::Base
 
     module ClassMethods
       def identificator_for(name)
-        cached_find_by_name(name: name).identificator
+        cached_find_by_name(name).identificator
       end
     end
   end
