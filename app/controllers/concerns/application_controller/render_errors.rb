@@ -1,4 +1,4 @@
-class ApplicationController
+class ApplicationController < ActionController::Base
   # This module rescues application from errors and defines methods render_not_found and render_error
   module RenderErrors
     extend ActiveSupport::Concern
