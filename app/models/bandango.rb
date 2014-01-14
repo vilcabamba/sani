@@ -12,6 +12,7 @@
 
 class Bandango < ActiveRecord::Base
   include Tokenizable
+  include BandangoTransacciones
 
 # relationships
   belongs_to :business
