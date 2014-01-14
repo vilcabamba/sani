@@ -67,3 +67,6 @@ end
 
 # serializer
 gem "active_model_serializers"
+
+# sorcery
+gem "sorcery"
