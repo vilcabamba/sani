@@ -1,0 +1,18 @@
+<h3>
+  <%= @bandango.new_record? ? "Nuevo" : "Editar" %>
+</h3>
+
+<%= form_for [@business, @bandango] do |f| %>
+  <div class="form-group">
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name, :class => "form-control" %>
+  </div>  
+  <div class="actions">
+    <% if @bandango.new_record? %>
+      <%= link_to "Cancelar", business_path(@business), :class => "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancelar", business_bandango_path(@business, @bandango), :class => "btn btn-link" %>
+    <% end %>
+    <%= f.submit "Enviar", :class => "btn btn-default", data: { disable_with: "Enviando.." } %>
+  </div>
+<% end %>
