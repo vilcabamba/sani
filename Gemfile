@@ -64,3 +64,6 @@ end
 
 group :test do
 end
+
+# serializer
+gem "active_model_serializers"
