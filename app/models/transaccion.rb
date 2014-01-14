@@ -13,6 +13,7 @@
 #
 
 class Transaccion < ActiveRecord::Base
+  include Caching
   include Validations
   include Identificable
 
