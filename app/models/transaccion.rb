@@ -17,4 +17,7 @@ class Transaccion < ActiveRecord::Base
 # serializations
   serialize :attrs
 
+# relationships
+  belongs_to :bandango
+
 end
