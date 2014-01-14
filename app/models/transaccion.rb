@@ -14,7 +14,7 @@
 
 class Transaccion < ActiveRecord::Base
   include Caching
-  include Callbacks
+  include Pusherable
   include Validations
   include Identificable
 

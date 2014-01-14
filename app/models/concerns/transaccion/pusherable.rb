@@ -1,5 +1,5 @@
 class Transaccion < ActiveRecord::Base
-  module Callbacks
+  module Pusherable
     extend ActiveSupport::Concern
 
     included do
