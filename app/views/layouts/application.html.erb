@@ -24,6 +24,7 @@
     <div class="align_center">
       <h1>Sani</h1>
     </div>
+    <%= render "layouts/navbar" if current_user %>
     <%= yield %>
   </div>
 </body>
