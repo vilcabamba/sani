@@ -11,6 +11,7 @@
 #
 
 class Bandango < ActiveRecord::Base
+  include Caching
   include Tokenizable
   include BandangoTransacciones
 
