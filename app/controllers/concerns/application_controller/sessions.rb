@@ -9,6 +9,9 @@ class ApplicationController
     def current_bandango
       @current_bandango ||= Bandango.cached_find(session[:bandango_id]) if session[:bandango_id]
     end
+    def current_user
+      @current_user ||= User.cached_find(session[:user_id]) if session[:user_id]
+    end
     def require_login
       unless current_user
         redirect_to login_path
