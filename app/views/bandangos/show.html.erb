@@ -1,3 +1,13 @@
+<ol class="breadcrumb">
+  <li>
+    <%= link_to "Negocios", businesses_path %>
+  </li>
+  <li>
+    <%= link_to @business.nombre, business_path(@business) %>
+  </li>
+  <li class="active"><%= @bandango.nombre %></li>
+</ol>
+
 <h3><%= @bandango.nombre %></h3>
 
 token:

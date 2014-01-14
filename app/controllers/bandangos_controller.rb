@@ -10,7 +10,6 @@ class BandangosController < ApplicationController
 
   def new
     @bandango = @business.bandangos.new
-    render :edit
   end
 
   def create

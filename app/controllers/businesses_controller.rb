@@ -11,7 +11,6 @@ class BusinessesController < ApplicationController
 
   def new
     @business = Business.new
-    render :edit
   end
 
   def edit
