@@ -1,0 +1,13 @@
+<h3>
+  <%= @business.new_record? ? "Nuevo" : "Editar" %>  
+</h3>
+
+<%= form_for @business do |f| %>
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre" %>
+    <%= f.text_field :nombre, :class => "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Enviar", :class => "btn btn-default", :data => {:disable_with => "Enviando.."} %>
+  </div> 
+<% end %>

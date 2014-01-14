@@ -1,3 +1,9 @@
+<span class="pull-right">
+  <%= link_to new_business_path, :class => "btn btn-xs btn-default" do %>
+    <span class="glyphicon glyphicon-plus"></span>
+  <% end %>
+</span>
+
 <div class="businesses">
   <% @businesses.each do |business| %>
     <%= render business %>
