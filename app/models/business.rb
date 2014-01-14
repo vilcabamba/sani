@@ -14,5 +14,6 @@ class Business < ActiveRecord::Base
 
 # relationships
   has_many :bandangos
+  has_many :transacciones, through: :bandangos
   
 end
