@@ -9,11 +9,12 @@
 #  attrs       :text
 #  created_at  :datetime
 #  updated_at  :datetime
-#  time        :datetime
+#  time        :datetime         not null
 #
 
 class Transaccion < ActiveRecord::Base
   include Validations
+  include Identificable
 
 # serializations
   serialize :attrs

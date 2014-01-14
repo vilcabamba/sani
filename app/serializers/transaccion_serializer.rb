@@ -2,5 +2,7 @@ class TransaccionSerializer < ActiveModel::Serializer
   attributes :id,
              :model,
              :action,
-             :attrs
+             :attrs,
+             :identificator
+
 end
