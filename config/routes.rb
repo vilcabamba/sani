@@ -1,3 +1,6 @@
+require "sidekiq/web"
+require "admin_constraint"
+
 Sani::Application.routes.draw do
   
   root "home#index"
@@ -14,4 +17,7 @@ Sani::Application.routes.draw do
   namespace :api do
     resources :transacciones
   end
+
+  # sidekiq:
+  mount Sidekiq::Web, at: "/sidekiq_web", :constraints => AdminConstraint.new
 end
