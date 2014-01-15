@@ -7,8 +7,8 @@
 "es":
   views:
     pagination:
-      previous: "&lt;"
-      next: "&gt;"
+      previous: "&laquo;"
+      next: "&raquo;"
       truncate: "..."
       last: "&uacute;ltimo"
       first: "primero"
