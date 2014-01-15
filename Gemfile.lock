@@ -59,6 +59,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     connection_pool (1.2.0)
+    dalli (2.6.4)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
@@ -257,6 +258,7 @@ DEPENDENCIES
   bullet
   capybara
   coffee-rails (~> 4.0.0)
+  dalli
   exception_notification
   factory_girl_rails
   guard-rspec

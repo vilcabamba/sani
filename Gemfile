@@ -65,6 +65,10 @@ end
 group :test do
 end
 
+group :production do
+  gem "dalli"
+end
+
 # serializer
 gem "active_model_serializers"
 
