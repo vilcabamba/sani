@@ -24,4 +24,8 @@ class Transaccion < ActiveRecord::Base
 # relationships
   belongs_to :bandango
 
+  def self.max_id
+    maximum(:id) || 0
+  end
+
 end

@@ -4,7 +4,7 @@ module Api
 
     def index
       since = params[:since] || 0
-      render json: current_bandango.transacciones_since(since), meta: { max_id: Transaccion.maximum(:id) }
+      render json: current_bandango.transacciones_since(since), meta: { max_id: Transaccion.max_id }
     end
 
     def create
