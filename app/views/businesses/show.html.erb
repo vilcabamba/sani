@@ -14,6 +14,8 @@
   <%= link_to "Editar", edit_business_path(@business), :class => "btn btn-link" %>
 </section>
 
+<%= link_to pluralize(@business.transacciones.count, "transacción", "transacciones"), business_transacciones_path(@business) %>
+
 <h4>Bandangos</h4>
 <div class="bandangos well">
   <span class="pull-right">

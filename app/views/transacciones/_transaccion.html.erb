@@ -1,0 +1,15 @@
+<%= div_for transaccion, :class => "model row" do %>
+  <div class="col-xs-3">
+    <%= l transaccion.time, format: :short %>
+  </div>
+  <div class="col-xs-2">
+    <%= transaccion.bandango.nombre %>
+  </div>
+  <div class="col-xs-2">
+    <code><%= transaccion.model %></code>
+    <code><%= transaccion.action %></code>
+  </div>
+  <div class="col-xs-5">
+    <pre><%= JSON.parse(transaccion.attrs).inspect %></pre>
+  </div>
+<% end %>

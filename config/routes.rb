@@ -13,6 +13,7 @@ Sani::Application.routes.draw do
   resources :models
   resources :businesses do
     resources :bandangos
+    resources :transacciones
   end
 
   namespace :api do
