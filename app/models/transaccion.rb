@@ -18,6 +18,9 @@ class Transaccion < ActiveRecord::Base
   include Validations
   include Identificable
 
+# scopes
+  default_scope { order("id DESC") }
+
 # serializations
   serialize :attrs
 

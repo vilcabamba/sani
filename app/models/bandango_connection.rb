@@ -12,6 +12,9 @@ class BandangoConnection < ActiveRecord::Base
   include Validations
   include Despachable
 
+# scopes
+  default_scope { order("id DESC") }
+
 # relationships
   belongs_to :bandango
 
