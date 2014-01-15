@@ -1,9 +1,9 @@
-<%= div_for user, :class => "row" do %>
+<%= div_for user, :class => "row model" do %>
   <div class="col-xs-1">
     <%= image_tag user.imagen_url, :class => "profile_image mini" %>
   </div>
   <div class="col-xs-10">
-    <div class="username"><%= user.username %></div>
+    <div class="username primary"><%= user.username %></div>
     <div class="email"><%= user.email %></div>
   </div>
   <div class="col-xs-1">
