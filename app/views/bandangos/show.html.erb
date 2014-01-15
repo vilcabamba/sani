@@ -14,3 +14,8 @@ token:
 <code><%= @bandango.token %></code>
 
 <%= link_to "Editar", edit_business_bandango_path(@business, @bandango), :class => "btn btn-link" %>
+
+<h4>Conexiones</h4>
+<div class="well bandango_connections models">
+  <%= render "bandango_connections/bandango_connections" %>
+</div>

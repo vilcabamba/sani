@@ -3,6 +3,7 @@ class BandangosController < ApplicationController
   before_action :find_bandango, only: [:show, :edit, :update]
 
   def show
+    @connections = @bandango.connections.page(params[:page]).per(10)
   end
 
   def edit

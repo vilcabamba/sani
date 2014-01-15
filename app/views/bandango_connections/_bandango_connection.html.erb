@@ -1,0 +1,4 @@
+<%= div_for bandango_connection, :class => "model" do %>
+  <%= l bandango_connection.created_at, format: :short %>:
+  <%= bandango_connection.transacciones_sent.join(", ") %>
+<% end %>
