@@ -9,6 +9,8 @@
 #
 
 class BandangoConnection < ActiveRecord::Base
+  include Validations
+  include Despachable
 
 # relationships
   belongs_to :bandango
