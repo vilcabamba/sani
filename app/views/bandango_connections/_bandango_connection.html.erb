@@ -1,6 +1,6 @@
 <%= div_for bandango_connection, :class => "model" do %>
   <%= l bandango_connection.created_at, format: :short %>
   <% bandango_connection.transacciones_sent.each do |transaccion| %>
-    - <a href="#"><%= transaccion %></a>
+    - <%= link_to transaccion, business_transaccion_path(@business, transaccion) %>
   <% end %>
 <% end %>
