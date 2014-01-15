@@ -20,5 +20,6 @@ class Bandango < ActiveRecord::Base
 # relationships
   belongs_to :business
   has_many :transacciones
+  has_many :connections, class_name: BandangoConnection
 
 end

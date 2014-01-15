@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114054938) do
+ActiveRecord::Schema.define(version: 20140115175237) do
+
+  create_table "bandango_connections", force: true do |t|
+    t.integer  "bandango_id",        null: false
+    t.text     "transacciones_sent"
+    t.datetime "created_at"
+  end
+
+  add_index "bandango_connections", ["bandango_id"], name: "index_bandango_connections_on_bandango_id", using: :btree
 
   create_table "bandangos", force: true do |t|
     t.integer  "business_id", null: false
