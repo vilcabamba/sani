@@ -1,0 +1,21 @@
+<h3>
+  <%= @model.new_record? ? "Nuevo" : "Editar" %>
+</h3>
+
+<%= form_for @model do |f| %>
+  
+  <%= form_errors_for @model %>
+
+  <div class="form-group">
+    <%= f.label :name, "Nombre" %>
+    <%= f.text_field :name, :class => "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :identificator, "Identificador" %>
+    <%= f.text_field :identificator, :class => "form-control", required: true %>
+  </div>
+  <div class="actions">
+    <%= link_to "Cancelar", models_path, :class => "btn btn-link" %>
+    <%= f.submit "Enviar", :class => "btn btn-default", data: { disable_with: "Enviando.." } %>
+  </div>
+<% end %>

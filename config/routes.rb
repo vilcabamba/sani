@@ -10,6 +10,7 @@ Sani::Application.routes.draw do
   
   resources :users
   resources :sessions
+  resources :models
   resources :businesses do
     resources :bandangos
   end

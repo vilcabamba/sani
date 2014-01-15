@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+  <li class="active">Modelos</li>
+</ol>
+
+<span class="pull-right">
+  <%= link_to new_model_path, :class => "btn btn-xs btn-default" do %>
+    <span class="glyphicon glyphicon-plus"></span>
+  <% end %>
+</span>
+<div class="clearfix"></div>
+
+<div class="models">
+  <% @models.each do |model| %>
+    <%= render model %>
+  <% end %>
+</div>
