@@ -1,5 +1,4 @@
-class BandangosController < ApplicationController
-  before_action :require_login, :set_active, :find_business
+class BandangosController < BusinessController
   before_action :find_bandango, only: [:show, :edit, :update]
 
   def show
@@ -36,12 +35,6 @@ class BandangosController < ApplicationController
 
   private
 
-  def set_active
-    @navbar_active = "businesses"
-  end
-  def find_business
-    @business = Business.cached_find params[:business_id]
-  end
   def find_bandango
     @bandango = Bandango.cached_find params[:id]
   end
