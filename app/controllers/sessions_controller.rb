@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     if user = login(params[:username], params[:password])
       redirect_back_or_to root_path, notice: "Bienvenido, #{user.username}"
     else
-      render :index, notice: "Nombre de usuario o contraseña incorrectos"
+      flash.now[:notice] = "Nombre de usuario o contraseña incorrectos"
+      render :index
     end
   end
   def destroy
