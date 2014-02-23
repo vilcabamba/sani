@@ -4,8 +4,10 @@
     <div><%= model.identificator %></div>
   </div>
   <div class="col-xs-1">
-    <%= link_to edit_model_path(model), :class => "btn btn-xs btn-default" do %>
-      <span class="glyphicon glyphicon-edit"></span>
+    <% for_admin do %>
+      <%= link_to edit_model_path(model), :class => "btn btn-xs btn-default" do %>
+        <span class="glyphicon glyphicon-edit"></span>
+      <% end %>
     <% end %>
   </div>
 <% end %>

@@ -1,21 +1,12 @@
 class ModelsController < ApplicationController
   before_action :require_login, :set_active
-  before_action :find_model, only: [:edit, :update]
-  
-  def index
-    @models = Model.all
-  end
+  before_action :require_admin, only: [:new, :edit, :create, :update]
 
-  def new
-    @model = Model.new
-  end
-
-  def edit  
-  end
+  expose :models
+  expose :model, attributes: :model_params
 
   def create
-    @model = Model.new model_params
-    if @model.save
+    if model.save
       flash[:notice] = "Creado"
       redirect_to action: :index
     else
@@ -25,7 +16,7 @@ class ModelsController < ApplicationController
   end
 
   def update
-    if @model.update_attributes(model_params)
+    if model.save
       flash[:notice] = "Actualizado"
       redirect_to action: :index
     else
@@ -39,11 +30,8 @@ class ModelsController < ApplicationController
   def set_active
     @navbar_active = "models"
   end
-  def find_model
-    @model = Model.cached_find params[:id]
-  end
+
   def model_params
     params.require(:model).permit :name, :identificator
   end
-  
 end

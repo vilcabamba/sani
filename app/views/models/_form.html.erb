@@ -1,10 +1,10 @@
 <h3>
-  <%= @model.new_record? ? "Nuevo" : "Editar" %>
+  <%= model.new_record? ? "Nuevo" : "Editar" %>
 </h3>
 
-<%= form_for @model do |f| %>
-  
-  <%= form_errors_for @model %>
+<%= form_for model do |f| %>
+
+  <%= form_errors_for model %>
 
   <div class="form-group">
     <%= f.label :name, "Nombre" %>
