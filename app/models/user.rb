@@ -14,5 +14,8 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
   include GravatarImagen
-  
+
+# relationships
+  has_many :businesses
+
 end

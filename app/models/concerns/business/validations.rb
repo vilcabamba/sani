@@ -4,6 +4,7 @@ class Business < ActiveRecord::Base
 
     included do
       validates :nombre, presence: true, uniqueness: true
+      validates :user_id, presence: true
     end
   end
 end

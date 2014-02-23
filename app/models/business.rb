@@ -14,7 +14,8 @@ class Business < ActiveRecord::Base
   include Validations
 
 # relationships
+  belongs_to :user
   has_many :bandangos
   has_many :transacciones, through: :bandangos
-  
+
 end
