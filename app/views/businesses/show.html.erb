@@ -8,8 +8,10 @@
 <section class="section">
   <h3><%= @business.nombre %></h3>
 
-  token:
-  <code><%= @business.token %></code>
+  <div>
+    token:
+    <code class="token"><%= @business.token %></code>
+  </div>
 
   <%= link_to "Editar", edit_business_path(@business), :class => "btn btn-link" %>
 </section>

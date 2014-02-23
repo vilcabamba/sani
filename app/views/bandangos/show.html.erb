@@ -10,8 +10,10 @@
 
 <h3><%= @bandango.nombre %></h3>
 
-token:
-<code><%= @bandango.token %></code>
+<div>
+  token:
+  <code class="token"><%= @bandango.token %></code>
+</div>
 
 <%= link_to "Editar", edit_business_bandango_path(@business, @bandango), :class => "btn btn-link" %>
 
