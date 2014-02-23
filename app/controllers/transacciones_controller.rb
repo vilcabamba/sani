@@ -1,12 +1,16 @@
 class TransaccionesController < BusinessController
 
+  expose(:transacciones) {
+    business.transacciones.includes(:bandango).page(params[:page]).per(10)
+  }
+  expose(:transaccion) {
+    business.transacciones.find params[:id]
+  }
+
   def index
-    @transacciones = @business.transacciones.includes(:bandango).page(params[:page]).per(10)
   end
 
   def show
-    @transacciones = Transaccion.where(id: params[:id]).page
-    render :index
   end
-  
+
 end

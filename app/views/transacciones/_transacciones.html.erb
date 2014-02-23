@@ -1,6 +1,6 @@
-<% @transacciones.each do |transaccion| %>
+<% transacciones.each do |transaccion| %>
   <%= render transaccion %>
 <% end %>
 <div class="align_center">
-  <%= paginate @transacciones, remote: true %>
+  <%= paginate transacciones, remote: true %>
 </div>
