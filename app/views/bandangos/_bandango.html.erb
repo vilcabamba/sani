@@ -1,4 +1,4 @@
-<%= link_to [@business, bandango], :class => "bandango" do %>
+<%= link_to [business, bandango], :class => "bandango" do %>
   <span class="nombre"><%= bandango.nombre %></span>
   <span class="light">
     <%= "hace #{time_ago_in_words bandango.last_connection_time}" if bandango.last_connection_time %>

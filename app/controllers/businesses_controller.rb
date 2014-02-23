@@ -1,24 +1,25 @@
 class BusinessesController < ApplicationController
   before_action :require_login, :set_active
-  before_action :find_business, only: [:show, :edit, :update]
 
-  def index
-    @businesses = Business.all
-  end
+  expose(:businesses) {
+    if current_user.admin?
+      Business.all.includes(:user)
+    else
+      current_user.businesses
+    end
+  }
 
-  def show
-  end
+  expose(:business) {
+    businesses.find params[:id]
+  }
 
   def new
-    @business = Business.new
-  end
-
-  def edit
+    self.business = Business.new
   end
 
   def create
-    @business = Business.new business_params
-    if @business.save
+    self.business = current_user.businesses.new business_params
+    if business.save
       flash.now[:notice] = "Creado"
       render :show
     else
@@ -28,7 +29,7 @@ class BusinessesController < ApplicationController
   end
 
   def update
-    if @business.update_attributes(business_params)
+    if business.update_attributes(business_params)
       flash.now[:notice] = "Actualizado"
       render :show
     else
@@ -42,11 +43,8 @@ class BusinessesController < ApplicationController
   def set_active
     @navbar_active = "businesses"
   end
-  def find_business
-    @business = Business.cached_find params[:id]
-  end
+
   def business_params
     params.require(:business).permit(:nombre)
   end
-  
 end

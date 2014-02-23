@@ -2,30 +2,30 @@
   <li>
     <%= link_to "Negocios", businesses_path %>
   </li>
-  <li class="active"><%= @business.nombre %></li>
+  <li class="active"><%= business.nombre %></li>
 </ol>
 
 <section class="section">
   <h3><%= @business.nombre %></h3>
 
   <div>
-    token:
-    <code class="token"><%= @business.token %></code>
+    <span class="stronger">token:</span>
+    <code class="token"><%= business.token %></code>
   </div>
 
-  <%= link_to "Editar", edit_business_path(@business), :class => "btn btn-link" %>
+  <%= link_to "Editar", edit_business_path(business), :class => "btn btn-link" %>
 </section>
 
-<%= link_to pluralize(@business.transacciones.count, "transacción", "transacciones"), business_transacciones_path(@business) %>
+<%= link_to pluralize(business.transacciones.count, "transacción", "transacciones"), business_transacciones_path(business) %>
 
 <h4>Bandangos</h4>
 <div class="bandangos well">
   <span class="pull-right">
-    <%= link_to new_business_bandango_path(@business), :class => "btn btn-xs btn-default" do %>
+    <%= link_to new_business_bandango_path(business), :class => "btn btn-xs btn-default" do %>
       <span class="glyphicon glyphicon-plus"></span>
     <% end %>
   </span>
-  <% @business.bandangos.each do |bandango| %>
+  <% business.bandangos.each do |bandango| %>
     <%= render bandango %>
   <% end %>
 </div>

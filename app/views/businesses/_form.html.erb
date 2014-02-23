@@ -1,21 +1,21 @@
 <h3>
-  <%= @business.new_record? ? "Nuevo" : "Editar" %>  
+  <%= business.new_record? ? "Nuevo" : "Editar" %>
 </h3>
 
-<%= form_for @business do |f| %>
+<%= form_for business do |f| %>
 
-  <%= form_errors_for @business %>
+  <%= form_errors_for business %>
 
   <div class="form-group">
     <%= f.label :nombre, "Nombre" %>
     <%= f.text_field :nombre, :class => "form-control", required: true %>
   </div>
   <div class="actions">
-    <% if @business.new_record? %>
+    <% if business.new_record? %>
       <%= link_to "Cancelar", businesses_path, :class => "btn btn-link" %>
     <% else %>
-      <%= link_to "Cancelar", business_path(@business), :class => "btn btn-link" %>
+      <%= link_to "Cancelar", business_path(business), :class => "btn btn-link" %>
     <% end %>
     <%= f.submit "Enviar", :class => "btn btn-default", :data => {:disable_with => "Enviando.."} %>
-  </div> 
+  </div>
 <% end %>
