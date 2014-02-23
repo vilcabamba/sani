@@ -1,0 +1,16 @@
+<ol class="breadcrumb">
+  <li>
+    <%= link_to "Usuarios", users_path %>
+  </li>
+  <li class="active"><%= user.username %></li>
+</ol>
+
+<%= render "user" %>
+
+<h3>Negocios</h3>
+
+<div class="models">
+  <% businesses.each do |business| %>
+    <%= render business %>
+  <% end %>
+</div>

@@ -1,21 +1,38 @@
 class UsersController < ApplicationController
   before_action :require_login, :set_active
-  before_action :find_user, only: [:edit, :update]
+  before_action :require_admin, only: [:new, :create]
+
+  expose(:users) {
+    if current_user.admin?
+      User.all
+    else
+      [current_user]
+    end
+  }
+
+  expose(:user) {
+    if current_user.admin?
+      User.find params[:id]
+    else
+      current_user
+    end
+  }
+
+  expose(:businesses) {
+    user.businesses.includes(:user)
+  }
 
   def index
-    @users = User.all
+    redirect_to action: :show, id: user.id unless current_user.admin?
   end
 
   def new
-    @user = User.new
-  end
-
-  def edit
+    self.user = User.new
   end
 
   def create
-    @user = User.new user_params
-    if @user.save
+    self.user = User.new user_params
+    if user.save
       flash[:notice] = "Creado"
       redirect_to action: :index
     else
@@ -25,7 +42,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(user_params)
+    if user.update_attributes(user_params)
       flash[:notice] = "Actualizado"
       redirect_to action: :index
     else
@@ -37,13 +54,10 @@ class UsersController < ApplicationController
   private
 
   def set_active
-    @navbar_active = "users"  
+    @navbar_active = "users"
   end
-  def find_user
-    @user = User.cached_find params[:id]
-  end
+
   def user_params
     params.require(:user).permit :username, :password, :email
   end
-  
 end

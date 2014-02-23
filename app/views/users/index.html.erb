@@ -2,15 +2,17 @@
   <li class="active">Usuarios</li>
 </ol>
 
-<span class="pull-right">
-  <%= link_to new_user_path, :class => "btn btn-xs btn-default" do %>
-    <span class="glyphicon glyphicon-plus"></span>
-  <% end %>
-</span>
-<div class="clearfix"></div>
+<% for_admin do %>
+  <span class="pull-right">
+    <%= link_to new_user_path, :class => "btn btn-xs btn-default" do %>
+      <span class="glyphicon glyphicon-plus"></span>
+    <% end %>
+  </span>
+  <div class="clearfix"></div>
+<% end %>
 
 <div class="models">
-  <% @users.each do |user| %>
+  <% users.each do |user| %>
     <%= render user %>
   <% end %>
 </div>
