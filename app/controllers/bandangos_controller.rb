@@ -1,20 +1,19 @@
 class BandangosController < BusinessController
-  before_action :find_bandango, only: [:show, :edit, :update]
-  before_action :find_connections, only: [:show, :create, :update]
 
-  def show
-  end
-
-  def edit
-  end
+  expose(:bandango) {
+    business.bandangos.find params[:id]
+  }
+  expose(:connections) {
+    bandango.connections.page(params[:page]).per(10)
+  }
 
   def new
-    @bandango = @business.bandangos.new
+    self.bandango = business.bandangos.new
   end
 
   def create
-    @bandango = @business.bandangos.new bandango_params
-    if @bandango.save
+    self.bandango = business.bandangos.new bandango_params
+    if bandango.save
       flash.now[:notice] = "Creado"
       render :show
     else
@@ -24,7 +23,7 @@ class BandangosController < BusinessController
   end
 
   def update
-    if @bandango.update_attributes(bandango_params)
+    if bandango.update_attributes(bandango_params)
       flash.now[:notice] = "Actualizado"
       render :show
     else
@@ -35,15 +34,7 @@ class BandangosController < BusinessController
 
   private
 
-  def find_bandango
-    @bandango = Bandango.cached_find params[:id]
-  end
-
   def bandango_params
     params.require(:bandango).permit(:name)
-  end
-
-  def find_connections
-    @connections = @bandango.connections.page(params[:page]).per(10)
   end
 end

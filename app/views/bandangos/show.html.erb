@@ -3,19 +3,19 @@
     <%= link_to "Negocios", businesses_path %>
   </li>
   <li>
-    <%= link_to @business.nombre, business_path(@business) %>
+    <%= link_to business.nombre, business_path(business) %>
   </li>
-  <li class="active"><%= @bandango.nombre %></li>
+  <li class="active"><%= bandango.nombre %></li>
 </ol>
 
-<h3><%= @bandango.nombre %></h3>
+<h3><%= bandango.nombre %></h3>
 
 <div>
   token:
-  <code class="token"><%= @bandango.token %></code>
+  <code class="token"><%= bandango.token %></code>
 </div>
 
-<%= link_to "Editar", edit_business_bandango_path(@business, @bandango), :class => "btn btn-link" %>
+<%= link_to "Editar", edit_business_bandango_path(business, bandango), :class => "btn btn-link" %>
 
 <h4>Conexiones</h4>
 <div class="well bandango_connections models">

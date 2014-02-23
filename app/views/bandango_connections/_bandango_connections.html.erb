@@ -1,9 +1,9 @@
-<% if @connections.any? %>
-  <% @connections.each do |connection| %>
+<% if connections.any? %>
+  <% connections.each do |connection| %>
     <%= render connection %>
   <% end %>
   <div class="align_center">
-    <%= paginate @connections, remote: true %>
+    <%= paginate connections, remote: true %>
   </div>
 <% else %>
   Ninguna
