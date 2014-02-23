@@ -82,3 +82,6 @@ gem "pusher"
 gem "sidekiq"
 gem "sinatra", require: false
 gem "slim"
+
+# decent exposure
+gem "decent_exposure"
