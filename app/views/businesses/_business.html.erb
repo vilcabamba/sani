@@ -1,3 +1,9 @@
 <%= link_to business, :class => "business model" do %>
   <span class="nombre primary"><%= business.nombre %></span>
+  <% for_admin do %>
+    <% unless business.user == current_user %>
+      <span class="light"><%= business.user %> - </span>
+    <% end %>
+  <% end %>
+  <span class="light"><%= pluralize business.transacciones.count, "transacción", "transacciones" %></span>
 <% end %>

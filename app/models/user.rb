@@ -18,4 +18,9 @@ class User < ActiveRecord::Base
 # relationships
   has_many :businesses
 
+# methods
+  def to_s
+    username
+  end
+
 end

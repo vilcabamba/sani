@@ -1,10 +1,10 @@
 module ApplicationHelper
-
   def navbar_active?(name)
     if @navbar_active == name
       raw "class='active'"
     end
   end
+
   def form_errors_for(object)
     if object.errors.any?
       content = pluralize object.errors.count, "error"
@@ -17,5 +17,9 @@ module ApplicationHelper
         raw content
       end
     end
+  end
+
+  def for_admin
+    yield if current_user and current_user.admin?
   end
 end

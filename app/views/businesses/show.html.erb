@@ -6,7 +6,16 @@
 </ol>
 
 <section class="section">
-  <h3><%= @business.nombre %></h3>
+  <h3>
+    <%= business.nombre %>
+    <% for_admin do %>
+      <% unless business.user == current_user %>
+        <div class="small">
+          <%= link_to business.user, user_path(business.user) %>
+        </div>
+      <% end %>
+    <% end %>
+  </h3>
 
   <div>
     <span class="stronger">token:</span>
