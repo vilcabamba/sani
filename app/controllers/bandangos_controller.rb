@@ -1,8 +1,8 @@
 class BandangosController < BusinessController
   before_action :find_bandango, only: [:show, :edit, :update]
+  before_action :find_connections, only: [:show, :create, :update]
 
   def show
-    @connections = @bandango.connections.page(params[:page]).per(10)
   end
 
   def edit
@@ -38,8 +38,12 @@ class BandangosController < BusinessController
   def find_bandango
     @bandango = Bandango.cached_find params[:id]
   end
+
   def bandango_params
     params.require(:bandango).permit(:name)
   end
 
+  def find_connections
+    @connections = @bandango.connections.page(params[:page]).per(10)
+  end
 end
