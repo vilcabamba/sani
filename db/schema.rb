@@ -65,12 +65,13 @@ ActiveRecord::Schema.define(version: 20140115175237) do
   add_index "transacciones", ["time"], name: "index_transacciones_on_time", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "username",         null: false
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "username",                         null: false
+    t.string   "email",                            null: false
+    t.string   "crypted_password",                 null: false
+    t.string   "salt",                             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",            default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
