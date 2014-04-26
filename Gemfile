@@ -42,9 +42,6 @@ gem "puma"
 # gem 'debugger', group: [:development, :test]
 
 gem "kaminari"
-gem "exception_notification"
-gem "rspec-rails"
-gem "rb-fsevent"
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"

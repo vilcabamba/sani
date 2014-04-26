@@ -78,7 +78,4 @@ Sani::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  # exception notification
-  config.middleware.use ExceptionNotification::Rack, :email => { :email_prefix => "[error en sani]", :sender_address => %{"bot notificador" <bot@shiriculapo.com>}, :exception_recipients => %w{admin@macool.me} }
 end
