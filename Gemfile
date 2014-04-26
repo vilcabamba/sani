@@ -70,7 +70,6 @@ end
 
 group :production do
   gem "dalli"
-  gem "rails_12factor"
 end
 
 # serializer
@@ -89,3 +88,5 @@ gem "slim"
 
 # decent exposure
 gem "decent_exposure"
+
+gem "foreman"
