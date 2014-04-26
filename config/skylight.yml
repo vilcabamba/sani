@@ -3,4 +3,4 @@
 application: UQkdP8fcAtER
 
 # The authentication token for the application.
-authentication: <%= ENV["SKYLIGHT_AUTH"] %>
+authentication: <%= ENV["SKYLIGHT_AUTHENTICATION"] %>
