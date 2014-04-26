@@ -90,3 +90,5 @@ gem "slim"
 gem "decent_exposure"
 
 gem "foreman"
+
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
