@@ -53,7 +53,18 @@ Sani::Application.configure do
 
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
-  config.cache_store = :dalli_store
+  # config.cache_store = :dalli_store
+
+  # add support for memcachedcloud_servers. heroku instance uses this addon:
+  # https://addons.heroku.com/memcachedcloud
+  # code from https://devcenter.heroku.com/articles/memcachedcloud#using-memcached-from-ruby
+  if ENV["MEMCACHEDCLOUD_SERVERS"]
+      Rails.application.config.cache_store = :dalli_store,
+        ENV["MEMCACHEDCLOUD_SERVERS"].split(','), {
+          username: ENV["MEMCACHEDCLOUD_USERNAME"],
+          password: ENV["MEMCACHEDCLOUD_PASSWORD"]
+        }
+  end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
