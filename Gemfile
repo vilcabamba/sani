@@ -88,3 +88,5 @@ gem "slim"
 
 # decent exposure
 gem "decent_exposure"
+
+gem "foreman"
