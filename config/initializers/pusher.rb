@@ -1,4 +1,3 @@
-pusher_url = YAML::load_file(File.join(Rails.root.to_s, "config", "pusher.yml"))["url"]
-
+pusher_url = "http://#{ENV["PUSHER_KEY"]}:#{ENV["PUSHER_SECRET"]}@api.pusherapp.com/apps/#{ENV["PUSHER_APP_ID"]}"
 Pusher.url = pusher_url
 Pusher.logger = Rails.logger
