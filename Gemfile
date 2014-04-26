@@ -70,6 +70,7 @@ end
 
 group :production do
   gem "dalli"
+  gem "skylight"
   gem "rails_12factor"
 end
 
