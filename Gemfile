@@ -42,6 +42,7 @@ gem "puma"
 # gem 'debugger', group: [:development, :test]
 
 gem "kaminari"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
@@ -53,10 +54,13 @@ end
 group :development do
   gem "rack-mini-profiler"
   gem "bullet"
+  gem "annotate"
+  gem "dotenv-rails"
+
+  # better errors
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
-  gem "annotate"
 end
 
 group :test do

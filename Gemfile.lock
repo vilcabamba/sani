@@ -63,10 +63,12 @@ GEM
     debug_inspector (0.0.2)
     decent_exposure (2.3.1)
     diff-lcs (1.2.5)
+    dotenv (0.11.1)
+      dotenv-deployment (~> 0.0.2)
+    dotenv-deployment (0.0.2)
+    dotenv-rails (0.11.1)
+      dotenv (= 0.11.1)
     erubis (2.7.0)
-    exception_notification (4.0.1)
-      actionmailer (>= 3.0.4)
-      activesupport (>= 3.0.4)
     execjs (2.0.2)
     factory_girl (4.3.0)
       activesupport (>= 3.0.0)
@@ -261,7 +263,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dalli
   decent_exposure
-  exception_notification
+  dotenv-rails
   factory_girl_rails
   guard-rspec
   jbuilder (~> 1.2)
@@ -273,7 +275,6 @@ DEPENDENCIES
   pusher
   rack-mini-profiler
   rails (= 4.0.1)
-  rb-fsevent
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc
