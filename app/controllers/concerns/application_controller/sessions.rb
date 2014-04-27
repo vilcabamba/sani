@@ -15,17 +15,11 @@ class ApplicationController
     end
 
     def require_login
-      unless current_user
-        redirect_to login_path
-        false
-      end
+      redirect_to login_path unless current_user
     end
 
     def require_admin
-      unless current_user.admin?
-        redirect_to root_path
-        false
-      end
+      redirect_to root_path unless current_user.admin?
     end
   end
 end
